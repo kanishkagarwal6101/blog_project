@@ -88,22 +88,14 @@ const AddStory = () => {
                     }}
                     ref={editorEl}
                 />
-                <div class="StoryImageField">
-                    <AiOutlineUpload />
-                    <div class="txt">
-                        {image ? image.name :
-                            " Include a high-quality image in your story to make it more inviting to readers."
-                        }
-                    </div>
-                    <input
-                        name="image"
-                        type="file"
-                        ref={imageEl}
-                        onChange={(e) => {
-                            setImage(e.target.files[0])
-                        }}
-                    />
-                </div>
+                                    <input
+                    type="text"
+                    required
+                    id="image"
+                    placeholder="Image URL"
+                    onChange={(e) => setImage(e.target.value)}
+                />
+
                 <button type='submit' disabled={image ? false : true} className={image ? 'addStory-btn' : 'dis-btn'}
                 >Publish </button>
             </form>
