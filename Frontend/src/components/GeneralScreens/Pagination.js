@@ -26,10 +26,9 @@ const Pagination = ({ page, pages, changePage }) => {
     }
     else {
         const startValue = Math.floor((page - 1) / 5) * 5
-
         middlePagination = (
             <>
-                {numberRange(startValue, pages).map((__, index) => (
+                {numberRange(startValue, startValue + 5).map((__, index) => (
                     <button
                         key={startValue + index + 1}
                         onClick={() => changePage(startValue + index + 1)}
@@ -41,7 +40,6 @@ const Pagination = ({ page, pages, changePage }) => {
                 ))}
                 <button>...</button>
                 <button
-
                     onClick={() => changePage(pages)} disabled={page === pages}>
                     {pages}
                 </button>
@@ -56,7 +54,7 @@ const Pagination = ({ page, pages, changePage }) => {
                         <button>...</button>
                         <button onClick={() => changePage(startValue)}>{startValue}</button>
 
-                        {numberRange(startValue, pages).map((__, index) => (
+                        {numberRange(startValue, startValue + 5).map((__, index) => (
                             <button
                                 key={startValue + index + 1}
                                 onClick={() => changePage(startValue + index + 1)}
