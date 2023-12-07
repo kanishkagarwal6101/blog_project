@@ -22,12 +22,19 @@ const StorySchema = new mongoose.Schema({
         required: [true, "Please a provide a content "],
         minlength: [10, "Please provide a content least 10 characters "],
     },
+    tags: {
+        type: Array,
+        required: [true, "Please provide tags that belong to this article"],
+        minlength: [1, "Please provide atleast 1 tag"]
+    },
     image: {
         type: String,
+        required: [true, "Please provide image for the article"],
         default: "default.jpg"
     },
     readtime: {
         type: Number,
+        required: [true, "Please provide readtime for article"],
         default: 3
     },
     likes: [{

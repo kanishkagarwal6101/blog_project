@@ -5,20 +5,16 @@ const {searchHelper, paginateHelper} =require("../Helpers/query/queryHelpers")
 
 const addStory = asyncErrorWrapper(async  (req,res,next)=> {
 
-    const {title,content} = req.body 
-
-    var wordCount = content.trim().split(/\s+/).length ; 
-   
-    let readtime = Math.floor(wordCount /200)   ;
-
 
     try {
+        // console.log(req.body)
         const newStory = await Story.create({
-            title,
-            content,
+            title: req.body.title,
+            content: req.body.content,
             author :req.user._id ,
-            image : req.savedStoryImage,
-            readtime
+            image: req.body.image,
+            tags: req.body.tags,
+            readtime: req.body.readtime
         })
 
         return res.status(200).json({

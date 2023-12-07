@@ -234,7 +234,7 @@ const DetailStory = () => {
               <div className='story-content' >
 
                 <div className="story-banner-img">
-                  <img src={`/storyImages/${story.image}`} alt={story.title} />
+                  <img src={story.image} alt={story.title} />
 
                 </div>
 
