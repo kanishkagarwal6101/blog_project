@@ -25,7 +25,7 @@ const Home = () => {
       setLoading(true)
       try {
 
-        const { data } = await axios.get(`/story/getAllStories?search=${searchKey || ""}&page=${page}`)
+        const { data } = await axios.get(`/story/getAllStories?search=${searchKey || ""}&page=${page}&limit=8`)
 
         if (searchKey) {
           navigate({
@@ -65,7 +65,7 @@ const Home = () => {
 
         <div className="skeleton_emp">
           {
-            [...Array(6)].map(() => {
+            [...Array(8)].map(() => {
               return (
                 // theme dark :> default : light
                 <SkeletonStory key={uuidv4()} />

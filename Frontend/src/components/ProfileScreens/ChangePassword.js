@@ -63,7 +63,7 @@ const ChangePassword = () => {
         <div className="Inclusive-changePass-page" >
             <form onSubmit={handleSubmit}>
                 {error && <div className="error_msg">{error}</div>}
-                {success && <div className="success_msg">{success}<Link to="/profile">Go Profile</Link>  </div>}
+                {success && <div className="success_msg">{success}<Link to="/profile">Go to Profile</Link>  </div>}
 
 
                 <div className="input-wrapper">

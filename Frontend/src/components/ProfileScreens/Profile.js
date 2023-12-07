@@ -50,16 +50,17 @@ const Profile = () => {
             {
                 loading ? <Loader /> :
                     <div className="Inclusive_profile_page">
-                        <Link to={'/'} >
-                            <FiArrowLeft />
-                        </Link>
+                        
                         <div className="profile-top-wrap">
 
                             <span>
-                                Membership Information
+                                User Information
                             </span>
+                            <Link to={'/'} >
+                            <FiArrowLeft />
+                            <a href="#!">Back</a>
+                        </Link>
 
-                            <a href="#!">Close  Account</a>
                         </div>
                         <ul>
 
